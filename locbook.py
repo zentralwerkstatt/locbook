@@ -16,7 +16,7 @@
 
 # 3rd party packages
 import geojson as gj
-import ijson.backends.yajl2_cffi as ijson
+import ijson.backends.yajl2_cffi as ijson 
 
 # Standard packages
 import datetime

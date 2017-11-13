@@ -1,6 +1,9 @@
 # Locbook
 
-Locbook is a minimalistic HTTP server for the [Owntracks](https://github.com/owntracks) mobile application, written in Python 3. It is intended to run on your own remote machine behind a modern web server like [Caddy](https://github.com/mholt/caddy).
+Locbook is a minimalist HTTP server for the [Owntracks](https://github.com/owntracks) mobile application, written in Python 3. It is intended to run on your own remote machine behind a modern web server like [Caddy](https://github.com/mholt/caddy).
+
+![](viz.jpg)
+*I spend way too much time at LAX...*
 
 ## Why?
 
@@ -8,7 +11,7 @@ Tracking the location of one's mobile device can be extremely useful for many di
 
 Locbook aims to provide the smallest possible implementation of a robust, personal Owntracks server that is still usable on a daily basis, mainly as a personal logbook. It is meant as a lightwheight alternative to [Owntracks Recorder](https://github.com/owntracks/recorder).
 
-## Features and Limitations
+## Features and limitations
 
 - Minimal dependencies
 - Easy integration with [Caddy](https://github.com/mholt/caddy)
@@ -24,7 +27,7 @@ On your remote machine, install the necessary dependencies:
 ~~~~~~~~
 pip install ijson geojson
 ~~~~~~~~
-Then, simply clone this repository and run `python3 locbook.py`. This runs Locbook and creates a `maps.js` file for the visualization and an internal `history.pickle` file which contains all data sent by Owntracks. To generate a human-readable backup of this data, use the `export_geojson` option. 
+Then, simply clone this repository and run `python3 locbook.py`. This runs Locbook and creates an internal `history.pickle` file which contains all data sent by Owntracks. To generate a human-readable backup of this data, use the `export_geojson` option. 
 
 Most likely, you will want to run Locbook in the background and independent of your SSH session on your remote machine. This can be achieved by running:
 ~~~~~~~~
@@ -59,6 +62,4 @@ SERVER {
 
 ## Visualization
 
-The visualization is based on [Leaflet](https://github.com/Leaflet/Leaflet) and can be completely customized by changing the [maps.html](maps.html) file. Visit the location specified in your web server configuration, then click on the link in `index.html` to see it:
-
-![Example visualization](example.jpg)
+The visualization is based on [Leaflet](https://github.com/Leaflet/Leaflet) and can be completely customized by changing the [map.html](map.html) file. Visit the location specified in your web server configuration, then click on the link in `index.html` to see it.

@@ -9,7 +9,7 @@ Locbook is a minimalist HTTP server for the [Owntracks](https://github.com/owntr
 
 Tracking the location of one's mobile device can be extremely useful for many different applications. Unfortunately, until recently, it was very difficult to host your own location tracking system independent of large companies like Google who sell such data to advertisers. With the [Owntracks](https://github.com/owntracks) project, self-hosted location tracking has become feasible.
 
-Locbook aims to provide the smallest possible implementation of a robust, personal Owntracks server that is still usable on a daily basis, mainly as a personal logbook. It is meant as a lightwheight alternative to [Owntracks Recorder](https://github.com/owntracks/recorder).
+Locbook aims to provide the smallest possible implementation of a robust, personal Owntracks server that is still usable on a daily basis, mainly as a personal logbook. It is meant as a lightweight alternative to [Owntracks Recorder](https://github.com/owntracks/recorder).
 
 ## Features and limitations
 
@@ -56,10 +56,8 @@ SERVER {
 }
 ~~~~~~~~
 
+Now just visit SERVER and enter USERNAME and PASSWORD to see the visualization. The visualization is based on [Leaflet](https://github.com/Leaflet/Leaflet) and can be completely customized by changing the [index.html](index.html) file.
+
 ## Example iPhone Owntracks configuration file
 
-[This](iphone_example.otrc) is an example configuration for the [Owntracks iPhone app](https://github.com/owntracks/ios). Replace `SERVER`, `USERNAME`, and `PASSWORD` with your own values, then send to an email address accessible by tyour iPhone and import setting into Owntracks. Android configuration files might need to include some different parameters, see the [Owntracks JSON documentation](http://owntracks.org/booklet/tech/json/).
-
-## Visualization
-
-The visualization is based on [Leaflet](https://github.com/Leaflet/Leaflet) and can be completely customized by changing the [map.html](map.html) file. Visit the location specified in your web server configuration, then click on the link in `index.html` to see it.
+[This](iphone_example.otrc) is an example configuration for the [Owntracks iPhone app](https://github.com/owntracks/ios). Replace `SERVER`, `USERNAME`, and `PASSWORD` with your own values, then send to an email address accessible by your iPhone and import settings into Owntracks. Android configuration files might need to include some different parameters, see the [Owntracks JSON documentation](http://owntracks.org/booklet/tech/json/).

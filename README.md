@@ -2,7 +2,7 @@
 
 Locbook is a minimalist HTTP server for the [Owntracks](https://github.com/owntracks) mobile application, written in Python 3. It is intended to run on your own remote machine behind a modern web server like [Caddy](https://github.com/mholt/caddy).
 
-![](viz.jpg)
+![](images/viz.jpg)
 *I spend way too much time at LAX...*
 
 ## Why?

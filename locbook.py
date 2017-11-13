@@ -1,6 +1,3 @@
-# Format documentation
-# http://owntracks.org/booklet/tech/json/
-
 # 3rd party javascripts
 # https://github.com/Leaflet/Leaflet.heat
 # https://github.com/perliedman/leaflet-realtime
@@ -9,10 +6,6 @@
 # 3rd party packages
 # https://github.com/isagalaev/ijson
 # https://github.com/frewsxcv/python-geojson
-
-######## TO DO ########
-# Packaging and licenses
-# Multiple devices
 
 # 3rd party packages
 import geojson as gj
@@ -31,7 +24,6 @@ parser.add_argument("--import_google", "-i", help='Import Google location histor
 parser.add_argument("--export_geojson", "-e", help='Export location history as GeoJSON file and quit')
 parser.add_argument("--port", "-p", help='Port to listen on for Owntracks POST requests, default 9001', default=9001)
 parser.add_argument("--logfile", "-l", help='If specified, log to file, otherwise log to terminal')
-
 args = parser.parse_args()
 
 history = dict()
@@ -43,6 +35,7 @@ geojson_filename = 'realtime.geojson'
 precision = 4 # Only 4 or 5 make sense for phone data
 blur = 5
 port = args.port
+
 logging.basicConfig(filename=args.logfile, level=logging.DEBUG, format='%(asctime)s %(message)s') # Only log to file if argument is present
 
 class RequestHandler(BaseHTTPRequestHandler):
@@ -164,7 +157,7 @@ def write_js():
 def main():
     load_history()
     server = HTTPServer(('', port), RequestHandler)
-    server.serve_forever()
+    server.serve_forever() # Run the HTTP server
 
 if __name__ == "__main__":
     if (args.import_google): import_google(args.import_google)

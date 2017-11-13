@@ -56,7 +56,7 @@ SERVER {
 }
 ~~~~~~~~
 
-Now just visit SERVER and enter USERNAME and PASSWORD to see the visualization. The visualization is based on [Leaflet](https://github.com/Leaflet/Leaflet) and can be completely customized by changing the [index.html](index.html) file.
+Now just visit `SERVER` and enter `USERNAME` and `PASSWORD` to see the visualization. The visualization is based on [Leaflet](https://github.com/Leaflet/Leaflet) and can be completely customized by changing the [index.html](index.html) file.
 
 ## Example iPhone Owntracks configuration file
 

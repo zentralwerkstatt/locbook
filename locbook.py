@@ -59,6 +59,7 @@ class RequestHandler(BaseHTTPRequestHandler):
 
 def load_history():
     # Load history from pickle file
+    global history
     logging.info('Loading history from ' + history_filename)
     try: 
         history = pickle.load(open(history_filename, 'rb'))

@@ -155,11 +155,11 @@ def write_js():
     f.close()
 
 def main():
-    load_history()
     server = HTTPServer(('', port), RequestHandler)
     server.serve_forever() # Run the HTTP server
 
 if __name__ == "__main__":
+    load_history()
     if (args.import_google): import_google(args.import_google)
     if (args.export_geojson): export_geojson(args.export_geojson)
     # Running the import or export function quits the program afterwards

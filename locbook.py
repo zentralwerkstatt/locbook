@@ -12,6 +12,7 @@ import geojson as gj
 import ijson.backends.yajl2_cffi as ijson 
 
 # Standard packages
+import time
 import datetime
 import pickle
 import logging

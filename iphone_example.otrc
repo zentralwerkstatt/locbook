@@ -8,7 +8,7 @@
   "port" : 9001,
   "deviceId" : "iPhone",
   "tid" : "1",
-  "monitoring" : -1,
+  "monitoring" : 2,
   "cmd" : true,
   "allowRemoteLocation" : true,
   "remoteConfiguration" : true,

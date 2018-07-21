@@ -37,7 +37,8 @@ precision = 4 # Only 4 or 5 make sense for phone data
 blur = 5
 port = args.port
 
-logging.basicConfig(filename=args.logfile, level=logging.DEBUG, format='%(asctime)s %(message)s') # Only log to file if argument is present
+# Only log to file if argument is present
+logging.basicConfig(filename=args.logfile, level=logging.DEBUG, format='%(asctime)s %(message)s') 
 
 class RequestHandler(BaseHTTPRequestHandler):
 
@@ -49,11 +50,12 @@ class RequestHandler(BaseHTTPRequestHandler):
         self.end_headers() 
 
     def log_message(self, format, *args):
-        return # We don't need http.server to run its own log
+        # We don't need http.server to run its own log
+        return 
 
 def load_history():
-    # Load history from pickle file
     global history
+    # Load history from pickle file
     logging.info('Loading history from ' + history_filename)
     try: 
         history = pickle.load(open(history_filename, 'rb'))
@@ -79,6 +81,7 @@ def parse_msg(msg):
         write_geojson(p, popup_content, geojson_filename)
 
 def make_history(p, d, t, sour):
+    global history
     # Defaultdict of defaultdicts
     if p in history:
         if d in history[p]:
@@ -93,6 +96,7 @@ def make_history(p, d, t, sour):
         pickle.dump(history, open('history.pickle', 'wb'))
 
 def export_geojson(filename):
+    global history
     logging.info('Exporting to ' + filename)
     with open(filename, 'w') as f:
         features = list()
@@ -137,6 +141,7 @@ def prec_to_m(prec):
     return(111320) / (10**prec)
 
 def write_js():
+    global history
     logging.info('Updating .js file')
     with open(js_filename, 'w') as f:
         f.write('var points = [')
